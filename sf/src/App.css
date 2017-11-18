@@ -24,7 +24,7 @@
 }
 
 #sideNav{
-  background:#0f1726;
+  background:#243047;
   height: 100vh;
   z-index: 40;
   position: absolute;
@@ -55,12 +55,18 @@ iframe{
   height: 0; 
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid red;
-  background: #0f1726;
+  border-left: 60px solid #243047;
+  background: #243047;
   border-radius:  0 100% 100% 0;
   z-index: 200;
   position: absolute;
 }
 #expanded-semi-circle{
   margin-left:300px;
+}
+.not-shown {
+  display: none;
+}
+.moveCircle{
+  margin-left: 300px;
 }

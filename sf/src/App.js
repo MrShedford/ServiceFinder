@@ -17,12 +17,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = { show: false };
+    
   }
 
   handleClick() {
     this.setState({
       show: !this.state.show
     });
+
+    if($('#sideNav').css("visibility") == "visible"){
+      $(".arrow-left").toggleClass("moveCircle");
+    }
   }
 
   render() {
