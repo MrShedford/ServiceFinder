@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto+Condensed');
 .App {
   text-align: center;
-  font-family:Verdana;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
   background:#0f1726;
 
 }
