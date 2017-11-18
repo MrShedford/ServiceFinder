@@ -43,6 +43,12 @@ class App extends Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
                 <Button type="submit"><span class="glyphicon glyphicon-search"></span></Button>
             </form>
+            <ul>
+              <li>Museums</li>
+              <li>Cafes</li>
+              <li>Petrol Stations</li>
+              <li>Cinemas</li>
+            </ul>
           </Col></ToggleDisplay>
           <div class="arrow-left" onClick={ () => this.handleClick() }></div>
         <Col md={12}>
