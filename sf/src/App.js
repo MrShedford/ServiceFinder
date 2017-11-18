@@ -45,7 +45,7 @@ class App extends Component {
                   this.setState({
                       bounds: null,
                       center: {
-                          lat: 41.9, lng: -87.624
+                          lat: 53.3299, lng: -6.2271
                       },
                       markers: [],
                       onMapMounted: ref => {
@@ -97,7 +97,7 @@ class App extends Component {
               <SearchBox
                   ref={props.onSearchBoxMounted}
                   bounds={props.bounds}
-                  controlPosition={google.maps.ControlPosition.TOP_LEFT}
+                  controlPosition={google.maps.ControlPosition.TOP_RIGHT}
                   onPlacesChanged={props.onPlacesChanged}
               >
                   <input

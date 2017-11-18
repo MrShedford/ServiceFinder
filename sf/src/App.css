@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  font-family:Verdana;
+  background:#0f1726;
+
+}
+.body{
+  background:#0f1726;
 }
 
 .App-logo {
@@ -51,6 +57,7 @@ input, Button{
 input{
   padding:10px;
   font-weight: bold;
+  color:white;
 }
 Button, .btn-default{
   width:50px;
@@ -82,7 +89,7 @@ iframe{
 }
 .jumbotron{
   background:#0f1726;
-  height:90px;
+  height:60px;
   padding:0;
   text-align: left;
   padding-left:115px;
@@ -107,4 +114,22 @@ iframe{
 }
 .moveCircle{
   margin-left: 300px;
+}
+ul{
+  margin-top: 20px;
+  color:white;
+  list-style: none;
+  cursor:pointer;
+}
+li{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-width: 0px 0px 2px 0px;
+  border-color: #a4abbc;
+  border-style: solid;
+  margin-right:20px;
+}
+li:hover{
+  border-color:#a4abbc;
+  color:grey;
 }
