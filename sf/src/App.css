@@ -5,6 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin-top: 20px;
 }
 
 .App-header {
@@ -22,18 +23,17 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 #sideNav{
-  background:grey;
+  background:#0f1726;
+  height: 100vh;
+  z-index: 40;
+  position: absolute;
+  width:300px;
 }
 iframe{
   position:fixed;
   top:0px;
-  left:20%;
+  left:0;
   bottom:0px;
   right:0px;
   width:100%;
@@ -42,4 +42,22 @@ iframe{
   margin:0;
   padding:0;
   overflow:hidden;
+  z-index:-20;
+}
+.jumbotron{
+  background:#0f1726;
+  height:10px;
+  padding-top:;
+}
+.arrow-left{
+  margin-left:300px;
+  margin-top:30vh;
+  width:0;
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #0f1726;
+  background: #0f1726;
+  border-radius:  0 100% 100% 0;
+ 
 }
