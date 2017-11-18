@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import logo from './FS.svg';
 import './App.css';
+import ToggleDisplay from 'react-toggle-display';
+import {Button, Row, Col, xs, md, iframe} from 'react-bootstrap';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import {compose, withProps, lifecycle} from 'recompose';
 import {SearchBox} from 'react-google-maps/lib/components/places/SearchBox';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { show: false };
+
+  }
+  onChange = (value) => {
+    this.setState({ value });
+  }
+
+  handleClick() {
+    this.setState({
+      show: !this.state.show
+    });
+
+    if($('#sideNav').css("visibility") == "visible"){
+      $(".arrow-left").toggleClass("moveCircle");
+    }
+  }
   render() {
-      const _ = require("lodash");
+      const _ = require('lodash');
       const google = window.google;
       const MapWithASearchBox = compose(
           withProps({
               googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
               loadingElement: <div style={{ height: `100%` }} />,
-              containerElement: <div style={{ height: `400px` }} />,
+              containerElement: <div style={{ height: `100vh` }} />,
               mapElement: <div style={{ height: `100%` }} />,
           }),
           lifecycle({
@@ -106,12 +128,31 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Service Finder</h1>
-        </header>
-          <p className="App-intro">Google Map Below:</p>
-          <MapWithASearchBox/>
+        <Row>
+        <ToggleDisplay show={this.state.show}>
+          <Col id="sideNav" className={this.props.shouldHide ? 'hidden' : ''}>
+          <div class="sentext">
+            <img src={logo} className="App-logo" alt="logo" id="navLogo"/>
+          </div>
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <Button type="submit"><span class="glyphicon glyphicon-search"></span></Button>
+            </form>
+            <ul>
+              <li>Museums</li>
+              <li>Cafes</li>
+              <li>Petrol Stations</li>
+              <li>Cinemas</li>
+            </ul>
+          </Col></ToggleDisplay>
+          <div class="arrow-left" onClick={ () => this.handleClick() }></div>
+        <Col md={12}>
+        <div class="jumbotron">
+          <img src={logo} className="App-logo" alt="logo"/>
+        </div>
+        <MapWithASearchBox className="mapwithbox"/>
+        </Col>
+        </Row>
       </div>
     );
   }
