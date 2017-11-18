@@ -50,14 +50,17 @@ iframe{
   padding-top:;
 }
 .arrow-left{
-  margin-left:300px;
   margin-top:30vh;
   width:0;
   height: 0; 
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid #0f1726;
+  border-left: 60px solid red;
   background: #0f1726;
   border-radius:  0 100% 100% 0;
- 
+  z-index: 200;
+  position: absolute;
+}
+#expanded-semi-circle{
+  margin-left:300px;
 }

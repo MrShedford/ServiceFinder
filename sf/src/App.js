@@ -2,6 +2,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; //needed for boot
 import $ from 'jquery'; 
 import React, { Component } from 'react';
 import logo from './FS.svg';                                   //import the logo
+import ToggleDisplay from 'react-toggle-display';
 import './App.css';
 import {Button} from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
@@ -12,15 +13,28 @@ import {md} from 'react-bootstrap';
 import {iframe} from 'react-bootstrap';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { show: false };
+  }
+
+  handleClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Row>
-          <Col id="sideNav">
+        <ToggleDisplay show={this.state.show}>
+          <Col id="sideNav" className={this.props.shouldHide ? 'hidden' : ''}>
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title"></h1>
-            <div class="arrow-left"></div>
-          </Col>
+          </Col></ToggleDisplay>
+          <div class="arrow-left" onClick={ () => this.handleClick() }></div>
         <Col md={12}>
         <div class="jumbotron"></div>
         <iframe src="//www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK&zoom=17&key=AIzaSyCdv5ReoRkSbxe1pw2yRBELP7mupCW-UgY"></iframe>
@@ -29,6 +43,8 @@ class App extends Component {
       </div>
     );
   }
+
+
 }
 
 export default App;
