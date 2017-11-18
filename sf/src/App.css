@@ -3,9 +3,9 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  margin-top: 20px;
+  height: 60px;
+  margin-top: 15px;
+  padding:0;
 }
 
 .App-header {
@@ -22,13 +22,49 @@
 .App-intro {
   font-size: large;
 }
+#navLogo{
+  margin-left:130px;
+}
 
 #sideNav{
+  text-align: center;
   background:#243047;
   height: 100vh;
   z-index: 40;
   position: absolute;
   width:300px;
+}
+.sentext{
+  text-align: left;
+  margin-bottom: 50px;
+}
+input, Button{
+  border-radius:4px;
+  border:none;
+  height: 50px;
+  width:190px;
+  margin-bottom: 10px;
+  margin-left: 8%;
+  outline:none;
+  background: #a4abbc;
+}
+input{
+  padding:10px;
+  font-weight: bold;
+}
+Button, .btn-default{
+  width:50px;
+  margin-left: 2px;
+  transform:translateY(-2px);
+  background-color: #ff0040;
+  border:none;
+}
+Button:hover, .btn-default:hover{
+  background-color: #d40a3d;
+  border:none;
+}
+.glyphicon{
+  color:white;
 }
 iframe{
   position:fixed;
@@ -46,11 +82,13 @@ iframe{
 }
 .jumbotron{
   background:#0f1726;
-  height:10px;
-  padding-top:;
+  height:90px;
+  padding:0;
+  text-align: left;
+  padding-left:115px;
 }
 .arrow-left{
-  margin-top:30vh;
+  margin-top:40vh;
   width:0;
   height: 0; 
   border-top: 60px solid transparent;

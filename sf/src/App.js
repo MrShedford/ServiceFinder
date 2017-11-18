@@ -4,13 +4,9 @@ import React, { Component } from 'react';
 import logo from './FS.svg';                                   //import the logo
 import ToggleDisplay from 'react-toggle-display';
 import './App.css';
-import {Button} from 'react-bootstrap';
-import {Row} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
-import {Grid} from 'react-bootstrap';
-import {xs} from 'react-bootstrap';
-import {md} from 'react-bootstrap';
-import {iframe} from 'react-bootstrap';
+import {Button, Row, Col, xs, md, iframe} from 'react-bootstrap';
+
+
 
 class App extends Component {
 
@@ -19,6 +15,10 @@ class App extends Component {
     this.state = { show: false };
     
   }
+
+  onChange = (value) => {
+    this.setState({ value });
+  };
 
   handleClick() {
     this.setState({
@@ -36,12 +36,19 @@ class App extends Component {
         <Row>
         <ToggleDisplay show={this.state.show}>
           <Col id="sideNav" className={this.props.shouldHide ? 'hidden' : ''}>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title"></h1>
+          <div class="sentext">
+            <img src={logo} className="App-logo" alt="logo" id="navLogo"/>
+          </div>
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <Button type="submit"><span class="glyphicon glyphicon-search"></span></Button>
+            </form>
           </Col></ToggleDisplay>
           <div class="arrow-left" onClick={ () => this.handleClick() }></div>
         <Col md={12}>
-        <div class="jumbotron"></div>
+        <div class="jumbotron">
+          <img src={logo} className="App-logo" alt="logo"/>
+        </div>
         <iframe src="//www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK&zoom=17&key=AIzaSyCdv5ReoRkSbxe1pw2yRBELP7mupCW-UgY"></iframe>
         </Col>
         </Row>
