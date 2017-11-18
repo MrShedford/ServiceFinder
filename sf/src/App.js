@@ -1,8 +1,9 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; //needed for bootstrap to work (& terminal :npm install --save bootstrap)
-import $ from 'jquery'; 
+import $ from 'jquery';                                        //(npm i jquery --save)
 import React, { Component } from 'react';
 import logo from './FS.svg';                                   //import the logo
-import ToggleDisplay from 'react-toggle-display';
+import ToggleDisplay from 'react-toggle-display';              // (npm install react-toggle-display)
+
 import './App.css';
 import {Button, Row, Col, xs, md, iframe} from 'react-bootstrap';
 
